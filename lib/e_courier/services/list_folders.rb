@@ -23,6 +23,7 @@ module ECourier
     def connect
       @imap = Net::IMAP.new(ENV['IMAP_HOST'], ENV['IMAP_PORT'], true)
       @imap.login(ENV['IMAP_USERNAME'], ENV['IMAP_PASSWORD'])
+      # TODO: Throw and error message in case the env hasn't all the info to connect to the imap
     end
 
     def list_folders &block
